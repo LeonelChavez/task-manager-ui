@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from '../../models/Task';
-import { TaskService } from '../../services/tarea.service';
+import { TaskService } from '../../services/task.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -11,27 +11,27 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './task-form.component.css'
 })
 export class TareaFormComponent {
-  tarea:Task=new Task();
+  task:Task=new Task();
 
-  constructor(private tareaService:TaskService, private router:Router, private route:ActivatedRoute){}
+  constructor(private taskService:TaskService, private router:Router, private route:ActivatedRoute){}
 
   ngOnInit():void{
-    const TAREAID = +this.route.snapshot.paramMap.get('id')!;
-    if(TAREAID){
-      this.tareaService.getTaskById(TAREAID).subscribe(tarea => {
-        this.tarea = tarea;
+    const TASKID = +this.route.snapshot.paramMap.get('id')!;
+    if(TASKID){
+      this.taskService.getTaskById(TASKID).subscribe(task => {
+        this.task = task;
       });
     }
   }
 
-  onSaveTarea():void{
-    if(this.tarea.id){
-      this.tareaService.updateTask(this.tarea.id, this.tarea).subscribe( updatedTarea => {
-        this.router.navigate(['/tareas']);
+  onSaveTask():void{
+    if(this.task.id){
+      this.taskService.updateTask(this.task.id, this.task).subscribe( updatedTask => {
+        this.router.navigate(['/task']);
       });
     } else{
-      this.tareaService.createTask(this.tarea).subscribe( savedTarea => {
-        this.router.navigate(['/tareas']);
+      this.taskService.createTask(this.task).subscribe( savedTarea => {
+        this.router.navigate(['/task']);
       });
     }
 

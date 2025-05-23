@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Task } from '../../models/Task';
-import { TaskService } from '../../services/tarea.service';
+import { TaskService } from '../../services/task.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-tarea-list',
+  selector: 'app-task-list',
   imports: [NgFor, RouterLink],
-  templateUrl: './tarea-list.component.html',
-  styleUrl: './tarea-list.component.css'
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.css'
 })
 export class TareaListComponent {
   tareas?:Task[];
