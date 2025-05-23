@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Task } from '../task/models/Task';
-import { TaskService } from '../task/services/task.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Task } from '../models/Task';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-task-list',

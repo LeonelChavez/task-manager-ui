@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskFormComponent } from './components/task/task-form/task-form.component';
+import { TaskListComponent } from './components/task/task-list/task-list.component';
 
 
 export const routes: Routes = [
