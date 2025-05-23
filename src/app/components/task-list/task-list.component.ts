@@ -11,23 +11,23 @@ import { RouterLink } from '@angular/router';
   styleUrl: './task-list.component.css'
 })
 export class TareaListComponent {
-  tareas?:Task[];
+  tasks?:Task[];
 
-  constructor(private tareaService:TaskService){}
+  constructor(private taskService:TaskService){}
 
   ngOnInit():void{
-    this.cargarTareas();
+    this.getTasks();
   }
 
-  cargarTareas():void{
-    this.tareaService.getAllTasks().subscribe( tareas => {
-      this.tareas = tareas;
+  getTasks():void{
+    this.taskService.getAllTasks().subscribe( tasks => {
+      this.tasks = tasks;
     });
   }
 
-  eliminarTarea(id?:number):void{
-    this.tareaService.deleteTask(id!).subscribe( () => {
-      this.cargarTareas();
+  deleteTask(id?:number):void{
+    this.taskService.deleteTask(id!).subscribe( () => {
+      this.getTasks();
     });
   }
 }
