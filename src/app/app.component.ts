@@ -9,5 +9,5 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'teleios-task-manager-ui';
+  title = 'Task Manager';
 }
