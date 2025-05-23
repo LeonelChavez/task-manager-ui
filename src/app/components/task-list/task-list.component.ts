@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Task } from '../../models/Task';
-import { TaskService } from '../../services/task.service';
+import { Task } from '../task/models/Task';
+import { TaskService } from '../task/services/task.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })
-export class TareaListComponent {
+export class TaskListComponent {
   tasks?:Task[];
 
   constructor(private taskService:TaskService){}

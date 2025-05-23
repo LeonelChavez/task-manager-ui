@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { TareaListComponent } from './components/task-list/task-list.component';
-import { TareaFormComponent } from './components/task-form/task-form.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { TaskFormComponent } from './components/task/task-form/task-form.component';
+
 
 export const routes: Routes = [
   {path:'',redirectTo:'/task',pathMatch:'full'},
-  {path:'task',component:TareaListComponent},
-  {path:'task/new',component:TareaFormComponent},
-  {path:'task/:id/edit',component:TareaFormComponent}
+  {path:'task',component:TaskListComponent},
+  {path:'task/new',component:TaskFormComponent},
+  {path:'task/:id/edit',component:TaskFormComponent}
 ];

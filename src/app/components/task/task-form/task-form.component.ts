@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Task } from '../../models/Task';
-import { TaskService } from '../../services/task.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Task } from '../models/Task';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-tarea-form',
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.css'
 })
-export class TareaFormComponent {
+export class TaskFormComponent {
   task:Task=new Task();
 
   constructor(private taskService:TaskService, private router:Router, private route:ActivatedRoute){}
