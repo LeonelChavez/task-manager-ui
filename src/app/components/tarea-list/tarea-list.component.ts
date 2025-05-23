@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Task } from '../../models/tarea';
-import { TareaService } from '../../services/tarea.service';
+import { Task } from '../../models/Task';
+import { TaskService } from '../../services/tarea.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -13,20 +13,20 @@ import { RouterLink } from '@angular/router';
 export class TareaListComponent {
   tareas?:Task[];
 
-  constructor(private tareaService:TareaService){}
+  constructor(private tareaService:TaskService){}
 
   ngOnInit():void{
     this.cargarTareas();
   }
 
   cargarTareas():void{
-    this.tareaService.getAllTareas().subscribe( tareas => {
+    this.tareaService.getAllTasks().subscribe( tareas => {
       this.tareas = tareas;
     });
   }
 
   eliminarTarea(id?:number):void{
-    this.tareaService.deleteTarea(id!).subscribe( () => {
+    this.tareaService.deleteTask(id!).subscribe( () => {
       this.cargarTareas();
     });
   }
