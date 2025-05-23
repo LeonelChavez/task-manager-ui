@@ -1,18 +1,18 @@
 <div class="container mt-3">
-  <h2>{{ tarea.id ? 'Editar' : 'Nueva'}} tarea</h2>
+  <h2>{{ tarea.id ? 'Edit' : 'New'}} task</h2>
   <form (ngSubmit)="onSaveTarea()">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" name="title" id="title" [(ngModel)]="tarea.title" required>
     </div>
     <div class="form-group">
-      <label for="description">Descripción</label>
+      <label for="description">Description</label>
       <textarea class="form-control" name="description" id="description" [(ngModel)]="tarea.description"
         required></textarea>
     </div>
     <div class="form-group">
       <input type="checkbox" [(ngModel)]="tarea.completed" name="completed">
     </div>
-    <button type="submit" class="btn btn-primary">{{ tarea.id ? 'Actualizar' : 'Guardar' }} </button>
+    <button type="submit" class="btn btn-primary">{{ tarea.id ? 'Update' : 'Save' }} </button>
   </form>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tarea } from '../../models/tarea';
+import { Task } from '../../models/tarea';
 import { TareaService } from '../../services/tarea.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './tarea-form.component.css'
 })
 export class TareaFormComponent {
-  tarea:Tarea=new Tarea();
+  tarea:Task=new Task();
 
   constructor(private tareaService:TareaService, private router:Router, private route:ActivatedRoute){}
 
