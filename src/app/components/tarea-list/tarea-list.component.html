@@ -3,18 +3,18 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Títulos</th>
-        <th>Descripción</th>
-        <th>Completado</th>
-        <th>Acciones</th>
+        <th>Títle</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody *ngFor="let tarea of tareas">
       <tr>
         <td>{{ tarea.id }}</td>
-        <td>{{ tarea.titulo }}</td>
-        <td>{{ tarea.descripcion }}</td>
-        <td> <input type="checkbox" [checked]="tarea.completado" disabled> </td>
+        <td>{{ tarea.title }}</td>
+        <td>{{ tarea.description }}</td>
+        <td> <input type="checkbox" [checked]="tarea.completed" disabled> </td>
         <td>
           <button class="btn btn-sm btn-info" routerLink="/tareas/{{tarea.id}}/edit">Actualizar</button>
           <button class="btn btn-sm btn-danger" (click)="eliminarTarea(tarea.id)">eliminar</button>

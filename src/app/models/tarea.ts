@@ -1,6 +1,6 @@
 export class Tarea {
   id?:number;
-  titulo?:string;
-  descripcion?:string;
-  completado?:boolean;
+  title?:string;
+  description?:string;
+  completed?:boolean;
 }
