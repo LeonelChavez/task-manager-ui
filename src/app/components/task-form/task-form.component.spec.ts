@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TareaFormComponent } from './tarea-form.component';
+import { TareaFormComponent } from './task-form.component';
 
 describe('TareaFormComponent', () => {
   let component: TareaFormComponent;

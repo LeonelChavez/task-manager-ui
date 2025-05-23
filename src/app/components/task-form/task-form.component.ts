@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-tarea-form',
   imports: [FormsModule],
-  templateUrl: './tarea-form.component.html',
-  styleUrl: './tarea-form.component.css'
+  templateUrl: './task-form.component.html',
+  styleUrl: './task-form.component.css'
 })
 export class TareaFormComponent {
   tarea:Task=new Task();
