@@ -7,27 +7,27 @@ import { Task } from '../models/Task';
   providedIn: 'root'
 })
 export class TaskService {
-  private baseUrl='http://localhost:8080/api/task';
+  private apiUrl='http://localhost:8080/api/task';
 
   constructor(private http:HttpClient) { }
 
   getAllTasks():Observable<Task[]>{
-    return this.http.get<Task[]>(this.baseUrl);
+    return this.http.get<Task[]>(this.apiUrl);
   }
 
   getTaskById(id:number):Observable<Task>{
-    return this.http.get<Task>(`${this.baseUrl}/${id}`);
+    return this.http.get<Task>(`${this.apiUrl}/${id}`);
   }
 
   createTask(task:Task):Observable<Task>{
-    return this.http.post<Task>(this.baseUrl + '/create', task);
+    return this.http.post<Task>(this.apiUrl + '/create', task);
   }
 
   updateTask(id:number,task:Task):Observable<Task>{
-    return this.http.put<Task>(`${this.baseUrl}/${id}`, task);
+    return this.http.put<Task>(`${this.apiUrl}/${id}`, task);
   }
 
   deleteTask(id:number):Observable<void>{
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
