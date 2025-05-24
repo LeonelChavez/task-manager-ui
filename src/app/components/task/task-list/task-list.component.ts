@@ -20,13 +20,13 @@ export class TaskListComponent {
   }
 
   getTasks():void{
-    this.taskService.getAllTasks().subscribe( tasks => {
+    this.taskService.getAll().subscribe( tasks => {
       this.tasks = tasks;
     });
   }
 
   deleteTask(id?:number):void{
-    this.taskService.deleteTask(id!).subscribe( () => {
+    this.taskService.delete(id!).subscribe( () => {
       this.getTasks();
     });
   }
