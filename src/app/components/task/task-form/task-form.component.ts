@@ -18,7 +18,7 @@ export class TaskFormComponent {
   ngOnInit():void{
     const TASKID = +this.route.snapshot.paramMap.get('id')!;
     if(TASKID){
-      this.taskService.getById(TASKID).subscribe(task => {
+      this.taskService.getTaskById(TASKID).subscribe(task => {
         this.task = task;
       });
     }
@@ -26,11 +26,11 @@ export class TaskFormComponent {
 
   onSaveTask():void{
     if(this.task.id){
-      this.taskService.update(this.task.id, this.task).subscribe( updatedTask => {
+      this.taskService.updateTask(this.task.id, this.task).subscribe( updatedTask => {
         this.router.navigate(['/task']);
       });
     } else{
-      this.taskService.create(this.task).subscribe( savedTarea => {
+      this.taskService.addTask(this.task).subscribe( savedTarea => {
         this.router.navigate(['/task']);
       });
     }
